@@ -1,0 +1,1 @@
+# No-Touch-IR-Thermometer
