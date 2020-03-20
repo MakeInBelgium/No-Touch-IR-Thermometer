@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [TinyFIR.PcbDoc]
+   Generated File[TinyFIR-Plated.TXT]
+   Generated File[TinyFIR.LDP]
+   Generated File[TinyFIR.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 07:46:19 On 20/03/2020
