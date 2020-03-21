@@ -19,15 +19,27 @@
 #define BAD  2
 #define ERROR 3
 
+/*
+ * Temperature tresholds:
+ *
+ *    Temperature in °C = ( raw sensor value * 0.02 ) + 273.15
+ * => Raw sensor value = ( Temperature in °C - 273.15 ) * 50
+ *
+ */
+
+// TODO: values need to be verified by med, still dummy values
+const uint16_t TEMP_TH_OK = ( 37.2 - 273.15 ) * 50 + 0.5;
+const uint16_t TEMP_TH_WARN = ( 38.0 - 273.15 ) * 50 + 0.5;
+
+
 // Function declarations
 void pinSetup();
 void setLEDstatus(uint8_t status);
-float readTemp(uint8_t reg);
-float readObjectTempC(void);
+uint16_t readTempObjRaw(void);
 
 int main(void)
 {
-	    // When we arive here it means we just had a reset-event. Most-probably because the user pushed the button!
+	    // When we arrive here it means we just had a reset-event. Most-probably because the user pushed the button!
 
 	    // 1. Init our little MCU: pins, drivers, possible Microchip middleware if there is no other way.
 	    pinSetup();
@@ -61,17 +73,7 @@ void setLEDstatus(uint8_t status){
 	}
 }
 
-float readObjectTempC(void)
+uint16_t readTempObjRaw(uint8_t reg)
 {
-	return readTemp(MLX90614_REG_TOBJ1);
-}
-
-float readTemp(uint8_t reg)
-{
-	float temp;
-	
-	temp = I2C_0_read2ByteRegister(MLX90614_I2CADDR, reg);
-	temp *= .02;
-	temp  -= 273.15;
-	return temp;
+	return I2C_0_read2ByteRegister(MLX90614_I2CADDR, MLX90614_REG_TOBJ1);
 }
