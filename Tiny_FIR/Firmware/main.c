@@ -22,14 +22,14 @@
 /*
  * Temperature tresholds:
  *
- *    Temperature in °C = ( raw sensor value * 0.02 ) + 273.15
- * => Raw sensor value = ( Temperature in °C - 273.15 ) * 50
+ *    Temperature in °C = ( raw sensor value * 0.02 ) - 273.15
+ * => Raw sensor value = ( Temperature in °C + 273.15 ) * 50
  *
  */
 
 // TODO: values need to be verified by med, still dummy values
-const uint16_t TEMP_TH_OK = ( 37.2 - 273.15 ) * 50 + 0.5;
-const uint16_t TEMP_TH_WARN = ( 38.0 - 273.15 ) * 50 + 0.5;
+const uint16_t TEMP_TH_OK = ( ( 37.2 + 273.15 ) * 50 ) + 0.5;
+const uint16_t TEMP_TH_WARN = ( ( 38.0 + 273.15 ) * 50 ) + 0.5;
 
 
 // Function declarations
