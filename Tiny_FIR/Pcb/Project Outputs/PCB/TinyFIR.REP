@@ -2,6 +2,38 @@
 FileName = TinyFIR.GBR
 AutoAperture = True
 *************************************************************
+Generating : Component Side
+      File : TinyFIR.GTL
+
+    Adding Layer      : Component Side
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D27
+    D28
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+*************************************************************
+
+*************************************************************
 Generating : Drill Drawing
       File : TinyFIR.GD1
 
@@ -11,32 +43,8 @@ Generating : Drill Drawing
 
 
 Used DCodes :
-    D48
-    D49
-*************************************************************
-
-*************************************************************
-Generating : Board Outline
-      File : TinyFIR.GM1
-
-    Adding Layer      : Board Outline
-
-
-Used DCodes :
-    D13
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : TinyFIR.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D13
-    D15
-    D47
+    D45
+    D46
 *************************************************************
 
 *************************************************************
@@ -51,12 +59,36 @@ Generating : Solder Side
 
 
 Used DCodes :
+    D24
     D25
     D26
     D27
     D28
     D29
     D30
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : TinyFIR.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D13
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Board Outline
+      File : TinyFIR.GM1
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D13
 *************************************************************
 
 *************************************************************
@@ -89,6 +121,25 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
+Generating : Bottom Layer
+      File : TinyFIR.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D13
+    D27
+    D28
+    D41
+    D42
+    D43
+    D44
+*************************************************************
+
+*************************************************************
 Generating : Top Overlay
       File : TinyFIR.GTO
 
@@ -102,55 +153,5 @@ Used DCodes :
     D13
     D14
     D15
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : TinyFIR.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D13
-    D42
-    D43
-    D44
-    D45
-    D46
-*************************************************************
-
-*************************************************************
-Generating : Component Side
-      File : TinyFIR.GTL
-
-    Adding Layer      : Component Side
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
-    D44
-    D45
-    D46
 *************************************************************
 

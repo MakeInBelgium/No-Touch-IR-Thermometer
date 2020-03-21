@@ -28,7 +28,7 @@ DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
-OutputPath=
+OutputPath=Project Outputs for TinyFir_PCB
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -119,54 +119,58 @@ Variation5=Designator=CON2|UniqueId=\HFYBUKLN|Kind=1|AlternatePart=
 ParamVariationCount=0
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs\PCB\TinyFIR-Plated.TXT
+DocumentPath=Project Outputs\PCB\TinyFIR-NonPlated.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs\PCB\TinyFIR.DRR
+DocumentPath=Project Outputs\PCB\TinyFIR-Plated.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs\PCB\TinyFIR.EXTREP
+DocumentPath=Project Outputs\PCB\TinyFIR.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs\PCB\TinyFIR.GBL
+DocumentPath=Project Outputs\PCB\TinyFIR.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs\PCB\TinyFIR.GBO
+DocumentPath=Project Outputs\PCB\TinyFIR.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs\PCB\TinyFIR.GBS
+DocumentPath=Project Outputs\PCB\TinyFIR.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs\PCB\TinyFIR.GD1
+DocumentPath=Project Outputs\PCB\TinyFIR.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs\PCB\TinyFIR.GM1
+DocumentPath=Project Outputs\PCB\TinyFIR.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs\PCB\TinyFIR.GTL
+DocumentPath=Project Outputs\PCB\TinyFIR.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs\PCB\TinyFIR.GTO
+DocumentPath=Project Outputs\PCB\TinyFIR.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs\PCB\TinyFIR.GTS
+DocumentPath=Project Outputs\PCB\TinyFIR.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs\PCB\TinyFIR.LDP
+DocumentPath=Project Outputs\PCB\TinyFIR.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument13]
+DocumentPath=Project Outputs\PCB\TinyFIR.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument14]
 DocumentPath=Project Outputs\PCB\TinyFIR.REP
 DItemRevisionGUID=
 
@@ -181,7 +185,7 @@ ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for TinyFir_PCB
 
 [OutputGroup1]
 Name=Netlist Outputs
@@ -292,7 +296,7 @@ OutputDefault20=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=Sandra
+TargetPrinter=HPD1756C (HP ENVY 4500 series)
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 
 [OutputGroup3]
