@@ -21,5 +21,5 @@ the Mage-FIR is based on the [ATmega328](https://www.microchip.com/wwwproducts/e
 *Audience*: literally everyone with an Arduino board and a soldering iron.
 
 ## Supported by:
-[EuroCircuits](https://www.eurocircuits.com/) - is helping with the first batches of the PCB-boards
-[MELEXIS](https://www.melexis.com/en) - has provided a first set sensors for the prototypes
+* [EuroCircuits](https://www.eurocircuits.com/) - is helping with the first batches of the PCB-boards
+* [MELEXIS](https://www.melexis.com/en) - has provided a first set sensors for the prototypes
