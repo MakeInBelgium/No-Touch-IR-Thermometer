@@ -33,6 +33,7 @@ As a side-note it should be noted that a more complex compensation algorithm to 
 The FOV of the sensor is defined as the region where it has more that 50% sensitivity. It is important that the surface that needs to be measured in entirely in the FOV. Some commercial thermometers achieve this by having two cocussed light beams converge, so when the dot allign the sensor is at the right distance.
 
 Further investigation here is still required on how to implement this.
+
 -----
 # References:
 1. <a name="cit1"></a>: https://www.ncbi.nlm.nih.gov/books/NBK331/
