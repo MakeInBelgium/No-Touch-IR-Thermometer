@@ -16,6 +16,13 @@ There are 2 design concepts we have come up with. Both are based on the exact sa
 The Tiny-FIR is based on the [ATtiny85](https://www.microchip.com/wwwproducts/en/ATtiny85) and will be a fully assembled PCB board. The designs for the board and all necessary information to recreate van be fond in the Tiny_FIR folder. 
 *Audience*: this model is targeted at makerspaces and manufacturers
 
+![Rear Close](/Pictures/Enclosure_Design_Rear_close.jpg)
+![Rear Close](/Pictures/Enclosure_Design_Front_close.jpg)
+
 ### Project *Mega-FIR*
 the Mage-FIR is based on the [ATmega328](https://www.microchip.com/wwwproducts/en/ATmega328) and will be a default prototype breadboard with pin-though-hole components. The idea here is that all components are readily available off the shelf without the need for 3rd party manufacturers.
 *Audience*: literally everyone with an Arduino board and a soldering iron.
+
+## Supported by:
+* [EuroCircuits](https://www.eurocircuits.com/) - is helping with the first batches of the PCB-boards
+* [MELEXIS](https://www.melexis.com/en) - has provided a first set sensors for the prototypes
