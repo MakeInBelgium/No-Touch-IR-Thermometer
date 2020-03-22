@@ -19,3 +19,7 @@ The Tiny-FIR is based on the [ATtiny85](https://www.microchip.com/wwwproducts/en
 ### Project *Mega-FIR*
 the Mage-FIR is based on the [ATmega328](https://www.microchip.com/wwwproducts/en/ATmega328) and will be a default prototype breadboard with pin-though-hole components. The idea here is that all components are readily available off the shelf without the need for 3rd party manufacturers.
 *Audience*: literally everyone with an Arduino board and a soldering iron.
+
+## Supported by:
+[EuroCircuits](https://www.eurocircuits.com/) - is helping with the first batches of the PCB-boards
+[MELEXIS](https://www.melexis.com/en) - has provided a first set sensors for the prototypes
