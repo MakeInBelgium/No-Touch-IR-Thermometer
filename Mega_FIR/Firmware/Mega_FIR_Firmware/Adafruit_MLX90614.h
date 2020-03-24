@@ -56,9 +56,11 @@ class Adafruit_MLX90614  {
   double readAmbientTempC(void);
   double readObjectTempF(void);
   double readAmbientTempF(void);
+
   uint16_t read16(uint8_t addr);
 
- private:
+private:
+ 
   float readTemp(uint8_t reg);
 
   uint8_t _addr;
