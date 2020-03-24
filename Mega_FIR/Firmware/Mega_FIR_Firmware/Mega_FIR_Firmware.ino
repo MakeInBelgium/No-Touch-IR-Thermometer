@@ -1,14 +1,12 @@
 #include "Adafruit_MLX90614.h"
 
-// MLX90614 Datasheet: https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf
-
 #define MLX90614_ERROR_BIT 0x8000
 
-#define PIN_LOW_FOR_SERIAL_MONITORING A0 // If this pin attached to GND, serial monitoring will be done
+#define PIN_LOW_FOR_SERIAL_MONITORING A0 // If this pin attached to GND, monitoring messages will be sent on the serial port
 #define PIN_LED_OK                    A1 // Green LED
 #define PIN_LED_WARN                  A2 // Yellow LED
 #define PIN_LED_NOK                   A3 // Red LED
-#define PIN_LOW_FOR_TRIGGER           A4 // When pulled low, a new measurement cycle is triggered
+#define PIN_LOW_FOR_TRIGGER           A4 // When pulled low, a new measurement cycle is triggered (can be used to connect a push-button)
 
 #define STATUS_OK   0
 #define STATUS_WARN   1
@@ -25,7 +23,7 @@
 
 // TODO: values need to be verified by med, still dummy values
 const uint16_t TEMP_TH_TOO_LOW =  ( ( 34.5 + 273.15 ) * 50 ) + 0.5;
-const uint16_t TEMP_TH_OK =       ( ( 37.5 + 273.15 ) * 50 ) + 0.5;
+const uint16_t TEMP_TH_OK =       ( ( 36.5 + 273.15 ) * 50 ) + 0.5;
 const uint16_t TEMP_TH_WARN =     ( ( 38.0 + 273.15 ) * 50 ) + 0.5;
 
 // Globals
@@ -47,24 +45,27 @@ void setup(){
     while(!Serial);
     Serial.println( "Mega_FIR - Starting" );
   }
- 
+
+  // Do one measurement when the arduino starts
   doMeasurement();
 }
 
 void loop(){
+  // Wait for the button to be pressed to start a new measurement cycle
   while( digitalRead( PIN_LOW_FOR_TRIGGER ) );
   doMeasurement();
 }
 
 void doMeasurement(){
   // Do 5 measurements, keep max
+  uint16_t numMeasurements = 5;
   uint16_t obj1TempRawMax = 0;
   setLedAllOn();
-  for( int i = 0; i < 5; i++ ){
+  for( uint16_t i = 0; i < numMeasurements; i++ ){
     uint16_t obj1TempRaw = readTempObj1Raw();
     obj1TempRawMax = max( obj1TempRawMax, obj1TempRaw );
     if( serialMonitoring ) serialPrintMeasurement(obj1TempRaw, i + 1);
-    if( i < 4 ){
+    if( i < numMeasurements - 1 ){
       delay( 200 );
     }
   }
@@ -164,7 +165,7 @@ double rawTempToCelcius( uint16_t raw ){
   return raw * 0.02 - 273.15;
 }
 
-void serialPrintMeasurement( uint16_t tempRaw, int i ){
+void serialPrintMeasurement( uint16_t tempRaw, uint16_t i ){
   Serial.print( "Sensor value " );
   Serial.print( i );
   Serial.print( ": " );
