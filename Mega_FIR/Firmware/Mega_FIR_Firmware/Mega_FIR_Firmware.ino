@@ -30,9 +30,8 @@ const uint16_t TEMP_TH_WARN =     ( ( 38.0 + 273.15 ) * 50 ) + 0.5;
 // Globals
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 bool serialMonitoring;    // If true, monitoring messages are sent over the serial port
-uint16_t statuses [50];  // Keep last x statuses
-uint16_t numStatuses;     // The number of elements in the array
-uint16_t idxStatuses;     // The index to which the current measurement will be written
+uint32_t millisStart;
+
 
 void setup(){
 
@@ -47,34 +46,44 @@ void setup(){
     serialMonitoring = true;
     Serial.begin( 9600 );
   }
-
-  // Initialize statuses array
-  idxStatuses = 0;
-  numStatuses = sizeof( statuses ) / sizeof( uint16_t );
-  for( uint16_t i = 0; i < numStatuses; i++ ){
-    statuses[i] = STATUS_INITIALIZING;
-  }
 }
 
 void loop(){
-  // Get the current sensor value
-  uint16_t obj1TempRaw = readTempObj1Raw();
-  if( serialMonitoring ) serialPrintMeasurement( obj1TempRaw );
 
-  // Calculate & store a status
-  uint8_t status = getStatus( obj1TempRaw );
-  statuses[idxStatuses] = status;
-  idxStatuses = (idxStatuses + 1 ) % numStatuses;
+  // Wait until button is pushed
+  setLedsAllOff();
+  if( !buttonPushed() ){
+    return;
+  }
 
-  // Calculate the worst of last x measurements
+  millisStart = millis();
+
+  // Initialize statuses array
+  uint16_t statuses [200]; // Keep last x statuses
+  uint16_t numStatuses = sizeof( statuses ) / sizeof( uint16_t ); // The number of elements in the array
+  for( uint16_t i = 0; i < numStatuses; i++ ){
+    statuses[i] = STATUS_INITIALIZING;
+  }
+
   uint8_t worst = STATUS_OK;
-  for( int i = 0; i < numStatuses; i++ ){
-    worst = max( worst, statuses[i] );
+  for( uint16_t i = 0; i < numStatuses; i++ ){
+    if( !buttonPushed() ) return;
+    uint16_t obj1TempRaw = readTempObj1Raw();
+    if( serialMonitoring ) serialPrintMeasurement( obj1TempRaw );
+
+    uint8_t status = getStatus( obj1TempRaw );
+    statuses[i] = status;
+    worst = max( worst, status );
+    displayStatus( STATUS_INITIALIZING );
+    delay( 5 );
   }
   
-  // Set some LEDs
-  displayStatus( worst );
-  delay( 10 );
+  // Display the status
+  while( buttonPushed() ){
+    displayStatus( worst );
+  }
+
+  delay( 50 ); // Debounce
 }
 
 void pinSetup(){
@@ -83,6 +92,10 @@ void pinSetup(){
   pinMode( PIN_LED_OK, OUTPUT );
   pinMode( PIN_LED_WARN, OUTPUT );
   pinMode( PIN_LED_NOK, OUTPUT );
+}
+
+bool buttonPushed(){
+  return !digitalRead( PIN_LOW_FOR_TRIGGER );
 }
 
 uint16_t readTempObj1Raw(){
@@ -112,6 +125,12 @@ uint8_t getStatus( uint16_t rawValue ){
   }
   if( serialMonitoring ) Serial.println( " - T above warning => STATUS_NOK" );
   return STATUS_NOK;
+}
+
+void setLedsAllOff(){
+  digitalWrite( PIN_LED_OK, LOW );
+  digitalWrite( PIN_LED_WARN, LOW );
+  digitalWrite( PIN_LED_NOK, LOW );
 }
 
 void displayStatus( uint8_t status ){
@@ -149,10 +168,10 @@ void displayStatus( uint8_t status ){
 
     case STATUS_INITIALIZING:{
       // Make the warning LED flash
-      uint32_t m = millis() % 200;
-      digitalWrite( PIN_LED_OK, m < 20 );
-      digitalWrite( PIN_LED_WARN, m >= 66 && m < 86 );
-      digitalWrite( PIN_LED_NOK, m >= 132 && m < 152 );
+      uint32_t m = ( millis() - millisStart ) % 450;
+      digitalWrite( PIN_LED_OK, m < 150 );
+      digitalWrite( PIN_LED_WARN, m >= 150 && m < 300 );
+      digitalWrite( PIN_LED_NOK, m >= 300 );
       break;
     }
   }
