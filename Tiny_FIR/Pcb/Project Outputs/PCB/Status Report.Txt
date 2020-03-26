@@ -1,13 +1,14 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : PCB Document [TinyFIR.PcbDoc]
-   Generated File[TinyFIR-Plated.TXT]
-   Generated File[TinyFIR-NonPlated.TXT]
-   Generated File[TinyFIR.LDP]
-   Generated File[TinyFIR.DRR]
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 12:50:14 On 26/03/2020
+
+Output: Copy of Generates pick and place files
+Type  : Pick Place
+From  : Variant [NoProgHeader] of PCB Document [TinyFIR.PcbDoc]
+   Generated File[Pick Place for TinyFIR(NoProgHeader).txt]
 
 
-Files Generated   : 4
+Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 10:45:56 On 21/03/2020
+Finished Output Generation At 12:50:17 On 26/03/2020

@@ -1,0 +1,15 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 19:26:58 On 24/03/2020
+
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [NoProgHeader] of Project [TinyFir_PCB.PrjPcb]
+   Generated File[Bill of Materials-TinyFir_PCB(NoProgHeader).xls]
+   Generated File[Bill of Materials-TinyFir_PCB(NoProgHeader).xls]
+
+
+Files Generated   : 2
+Documents Printed : 0
+
+Finished Output Generation At 19:27:09 On 24/03/2020
