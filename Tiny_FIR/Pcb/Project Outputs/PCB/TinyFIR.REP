@@ -2,10 +2,12 @@
 FileName = TinyFIR.GBR
 AutoAperture = True
 *************************************************************
-Generating : Top Overlay
-      File : TinyFIR.GTO
+Generating : Component Side
+      File : TinyFIR_Copper_Signal_Top.gbr
 
-    Adding Layer      : Top Overlay
+    Adding Layer      : Component Side
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
@@ -15,72 +17,6 @@ Used DCodes :
     D13
     D14
     D15
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : TinyFIR.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D13
-    D15
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : TinyFIR.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D13
-    D27
-    D28
-    D41
-    D42
-    D43
-    D44
-*************************************************************
-
-*************************************************************
-Generating : Solder Side
-      File : TinyFIR.GBS
-
-    Adding Layer      : Solder Side
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-*************************************************************
-
-*************************************************************
-Generating : Top Solder
-      File : TinyFIR.GTS
-
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Component Side
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
     D16
     D17
     D18
@@ -95,37 +31,47 @@ Used DCodes :
     D27
     D28
     D29
-    D30
 *************************************************************
 
 *************************************************************
-Generating : Board Outline
-      File : TinyFIR.GM1
+Generating : Bottom Layer
+      File : TinyFIR_Copper_Signal_Bot.gbr
 
-    Adding Layer      : Board Outline
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D13
+    D19
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
 *************************************************************
 
 *************************************************************
-Generating : Drill Drawing
-      File : TinyFIR.GD1
+Generating : Bottom Pad Master
+      File : TinyFIR_Pads_Bot.gbr
 
-    Adding Drill Pair : Component Side-Bottom Layer
+    Adding Layer      : Bottom Layer
 
-    Adding Layer      : Drill Drawing
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D45
-    D46
+    D24
+    D25
+    D26
+    D27
+    D28
 *************************************************************
 
 *************************************************************
-Generating : Component Side
-      File : TinyFIR.GTL
+Generating : Top Pad Master
+      File : TinyFIR_Pads_Top.gbr
 
     Adding Layer      : Component Side
 
@@ -137,21 +83,171 @@ Used DCodes :
     D11
     D12
     D13
+    D14
+    D15
+    D16
+    D17
+    D24
+    D25
+    D26
     D27
     D28
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : TinyFIR_Legend_Bot.gbr
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D30
     D31
+*************************************************************
+
+*************************************************************
+Generating : Solder Side
+      File : TinyFIR_Soldermask_Bot.gbr
+
+    Adding Layer      : Solder Side
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D25
     D32
     D33
     D34
     D35
     D36
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : TinyFIR_Paste_Bot.gbr
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : TinyFIR_Legend_Top.gbr
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D30
+    D31
     D37
     D38
     D39
     D40
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : TinyFIR_Paste_Top.gbr
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Component Side
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : TinyFIR_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Component Side
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D25
+    D32
+    D33
+    D34
+    D35
+    D36
     D41
     D42
     D43
     D44
+    D45
+    D46
+    D47
+    D48
+*************************************************************
+
+*************************************************************
+Generating : Board Outline
+      File : TinyFIR_Mechanical_1.gbr
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D30
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : TinyFIR_Profile.gbr
+
+
+Used DCodes :
+    D49
+*************************************************************
+
+*************************************************************
+Generating : Non-plated through-hole drill file
+      File : TinyFIR_NPTH_Drill.gbr
+
+
+Used DCodes :
+    D50
+    D51
+    D52
+    D53
+*************************************************************
+
+*************************************************************
+Generating : Plated through-hole drill file
+      File : TinyFIR_PTH_Drill.gbr
+
+
+Used DCodes :
+    D54
+    D55
+    D56
 *************************************************************
 

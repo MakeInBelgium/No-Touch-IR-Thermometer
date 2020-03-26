@@ -1,0 +1,28 @@
+Altium Designer Pick and Place Locations
+C:\Users\mxa\Documents\Private Documents\Projects\MakeInBelgium\No-Touch-IR-Thermometer\Tiny_FIR\Pcb\Project Outputs\PCB\Pick Place for TinyFIR(NoProgHeader).csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       26/03/20
+Time:       13:54
+Revision:   31c66ee55a1fa1efa4661abaa7b272afe6c84a4b
+Variant:    NoProgHeader
+Units used: mm
+
+"Designator","Comment","Layer","Footprint","Center-X(mm)","Center-Y(mm)","Rotation","Description"
+"U1","MLX90614","BottomLayer","MLX90614_**C","0.0000","4.5000","90","MLX90614 Infra Red Thermometer in TO-39"
+"SW1","D6R","TopLayer","SW_SPST_PB_CK","0.0000","-5.5000","0","SPST Momentary Key Switches"
+"R4","180R","TopLayer","RESC1608[0603]N","-7.5000","3.8000","360","Resistor Thick Film; 180R; 0603; 0.1W; 1%; 50V; 100ppm/DegC"
+"U3","MIC5501-3.0YM5","TopLayer","SOT23-5","-7.5000","-4.4350","360","Voltage Regulator, FIxed LDO, Vo=+3V, Io=300mA, SOT23-5"
+"U2","Attiny xx2","TopLayer","SOIC127P600-8_straight","6.9000","2.2500","180","AVR® Microcontroller with Core Independent Peripherals
+and picoPower® Technology"
+"R5","180R","TopLayer","RESC1608[0603]N","-7.5000","5.2000","360","Resistor Thick Film; 180R; 0603; 0.1W; 1%; 50V; 100ppm/DegC"
+"R3","180R","TopLayer","RESC1608[0603]N","-7.5000","2.4000","360","Resistor Thick Film; 180R; 0603; 0.1W; 1%; 50V; 100ppm/DegC"
+"R2","1K","TopLayer","RESC1608[0603]N","-7.5000","-0.2500","180","Resistor Thick Film; 1K; 0603; 0.1W; 1%; 50V; 100ppm/DegC"
+"R1","1K","TopLayer","RESC1608[0603]N","-7.5000","1.0019","180","Resistor Thick Film; 1K; 0603; 0.1W; 1%; 50V; 100ppm/DegC"
+"LED1","KP-2012SRC","TopLayer","DIO2012[0805]","-6.0000","9.5000","270","LED SMD 0805 super bright red clear"
+"LED2","KP-2012SYC","TopLayer","DIO2012[0805]","0.0000","9.5000","270","LED SMD 0805 super bright yellow clear"
+"LED3","KP-2012MGC","TopLayer","DIO2012[0805]","6.0000","9.5000","270","LED SMD 0805 mega green clear"
+"C3","100n","TopLayer","CAPC1608[0603]N","-7.7000","-6.9400","180","CAPACITOR Ceramic Multi-Layer X7R; 100nF; 50V; 0603; Tolerance, +/-10%; Temp, op. -55°C to +125°C"
+"C1","100n","TopLayer","CAPC1608[0603]N","-0.1376","6.2960","180","CAPACITOR Ceramic Multi-Layer X7R; 100nF; 50V; 0603; Tolerance, +/-10%; Temp, op. -55°C to +125°C"
