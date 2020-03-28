@@ -31,14 +31,13 @@
  *
  */
 
-
 // TODO: values need to be verified by med, still dummy values
-const uint16_t TEMP_TH_TOO_LOW =	( ( 34.5 + 273.15 ) * 50 ) + 0.5;
-const uint16_t TEMP_TH_OK =			( ( 37.5 + 273.15 ) * 50 ) + 0.5;
-const uint16_t TEMP_TH_WARN =		( ( 38.0 + 273.15 ) * 50 ) + 0.5;
+const uint16_t TEMP_TH_TOO_LOW =  ( ( 34.5 + 273.15 ) * 50 ) + 0.5;
+const uint16_t TEMP_TH_OK =       ( ( 36.5 + 273.15 ) * 50 ) + 0.5;
+const uint16_t TEMP_TH_WARN =     ( ( 38.0 + 273.15 ) * 50 ) + 0.5;
 
 // Globals
-uint32_t millis;
+uint32_t millis; // Approximates the run time in milliseconds (no need for 100% accuracy, just used to blink the leds)
 
 // Function declarations
 void pinSetup();
@@ -51,37 +50,44 @@ void displayStatus( uint8_t status );
 int main(void){
 	    // When we arrive here it means we just had a reset-event. Most-probably because the user pushed the button!
 
-	    // Init our little MCU: pins, drivers, possible Microchip middleware if there is no other way.
+	    // Init our little MCU: pins, drivers, ...
 	    pinSetup();
+		
+		// Give the sensor a small time to start up
+		// (MCU seems to start up faster than sensor => if the MCU communicates too soon with the sensor, 0-values are 'measured')
+		setLedsAllOff();
+		PORTA.OUTSET = LED_OK_bm;
+		_delay_ms( 100 );
+			
 	    atmel_start_init();
-	    
-	    // Wait until button is pushed
-	    setLedsAllOff();
-	   
+
 	    // Initialize statuses array
-	    uint16_t statuses [200]; // Keep last x statuses
+	    uint16_t statuses [25]; // Keep last x statuses
 	    uint16_t numStatuses = sizeof( statuses ) / sizeof( uint16_t ); // The number of elements in the array
 	    for( uint16_t i = 0; i < numStatuses; i++ ){
 		    statuses[i] = STATUS_INITIALIZING;
 	    }
 
 		millis = 0;
+		uint16_t loopTime = 80; // Measure-loop takes about 80ms
 	    uint8_t worst = STATUS_OK;
 	    for( uint16_t i = 0; i < numStatuses; i++ ){
-		   
+
 		    uint16_t obj1TempRaw = readTempObj1Raw();
 
 		    uint8_t status = getStatus( obj1TempRaw );
 		    statuses[i] = status;
 		    worst = status > worst ? status : worst;
 		    displayStatus( STATUS_INITIALIZING );
-		    _delay_ms( 5 );
+
+			 millis += loopTime;
 	    }
-	     
+
 		while(true)
 		{
 			displayStatus( worst );
-			_delay_ms( 5 );
+			_delay_ms( loopTime );
+			millis += loopTime;
 		}
 }
 
@@ -90,39 +96,8 @@ void pinSetup(){
 }
 
 uint16_t readTempObj1Raw(){
-	
-	/*
-	 * Some hardcoded values you can return for testing
-	 *
-	// return TEMP_TH_TOO_LOW - 1;
-	// return TEMP_TH_OK - 1;
-	// return TEMP_TH_WARN - 1;
-	*/
-	return TEMP_TH_WARN + 1;
-	
-	/*
-	 * Doesn't work --> seems to block... 
-	 * 
-    return I2C_0_read2ByteRegister(MLX90614_I2CADDR, MLX90614_REG_TOBJ1);
-	*/
-	
-	/*
-	 * Mimics logic in adafruit Arduino lib
-	 * Doesn't work --> seems to always return 0 (After timeout?)...
-	 
-	  
-	uint8_t reg = MLX90614_REG_TOBJ1;
-	I2C_0_writeNBytes(MLX90614_I2CADDR, &reg, 1 );
-	
-	uint16_t regValue = 0;
-	I2C_0_readNBytes(MLX90614_I2CADDR, &regValue, 2 );
-	regValue = regValue << 8 | regValue >> 8;
-	
-	uint8_t temp;
-	I2C_0_readNBytes(MLX90614_I2CADDR, &temp, 1 );
-		
-	return regValue;
-	*/
+    uint16_t regValue = I2C_0_read2ByteRegister(MLX90614_I2CADDR, MLX90614_REG_TOBJ1);
+	return regValue << 8 | regValue >> 8;
 }
 
 uint8_t getStatus( uint16_t rawValue ){
@@ -150,7 +125,6 @@ void setLedsAllOff(){
 }
 
 void displayStatus( uint8_t status ){
-  millis += 5;
 	
   switch(status){
     case STATUS_OK:{
@@ -173,7 +147,7 @@ void displayStatus( uint8_t status ){
     
     case STATUS_ERROR:{
       // Make the warning LED flash
-      uint32_t m = millis % 200;
+      uint32_t m = millis % 240;
       if( m < 20 ){
 		  PORTA.OUTCLR = LED_OK_bm | LED_NOK_bm;
 		  PORTA.OUTSET = LED_WARN_bm;
@@ -187,13 +161,13 @@ void displayStatus( uint8_t status ){
 
     case STATUS_INITIALIZING:{
       // Make the warning LED flash
-      uint32_t m = millis % 450;
-	  PORTA.OUTCLR =  (( m < 150 ) ? 0 : LED_OK_bm )
-					| (( m >= 150 && m < 300 ) ? 0 : LED_WARN_bm )
-					| (( m >= 300 ) ? 0 : LED_NOK_bm );
-	  PORTA.OUTSET = (( m < 150 ) ? LED_OK_bm : 0 )
-				   | (( m >= 150 && m < 300 ) ? LED_WARN_bm : 0 )
-				   | (( m >= 300 ) ? LED_NOK_bm : 0 );
+      uint32_t m = millis % 460;
+	  PORTA.OUTCLR =  (( m < 160 ) ? 0 : LED_OK_bm )
+					| (( m >= 160 && m < 320 ) ? 0 : LED_WARN_bm )
+					| (( m >= 320 ) ? 0 : LED_NOK_bm );
+	  PORTA.OUTSET = (( m < 160 ) ? LED_OK_bm : 0 )
+				   | (( m >= 160 && m < 320 ) ? LED_WARN_bm : 0 )
+				   | (( m >= 320 ) ? LED_NOK_bm : 0 );
       break;
     }
   }
