@@ -9,5 +9,5 @@
 | 1 | LED - Green | ? | ? |
 | 1 | LED - Yellow | ? | ? |
 | 1 | LED - Red | ? | ? |
-| 1 | Resistor 1kΩ | ? | ? |
-| 1 | Resistor 100Ω | ? | ? |
+| 2 | Resistor 1kΩ | ? | ? |
+| 3 | Resistor 100Ω | ? | ? |
