@@ -3,7 +3,7 @@
 | # | Description | Manufacturer-ID | Farnel Code |
 |----------|----------|----------|----------|
 | 1 | Melexis Sensor MLX90614 | MLX90614-DCC | ? |
-| 1 | ATmega328 Microprocessor | ATMEGA328-PU | 1972087 |
+| 1 | ATmega328 Microprocessor | ATMEGA328-PU | 1972087 [link(.be)](https://be.farnell.com/microchip/atmega328-pu/mcu-8bit-atmega-20mhz-dip-28/dp/1972087) |
 | 1 | LDO Voltage Regulator (3V) | LP2950-30LPR | 3122121 [link(.be)](https://be.farnell.com/texas-instruments/lp2950-30lpr/ic-ldo-volt-reg-3v-0-1a-to-92/dp/3122121) |
 | 1 | Switch | ? | ? |
 | 1 | LED - Green | ? | ? |
