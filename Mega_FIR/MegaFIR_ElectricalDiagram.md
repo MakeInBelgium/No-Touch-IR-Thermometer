@@ -1,7 +1,6 @@
 # MegaFIR Electrical Diagram
 
-![Electrical Diagram](/Pictures/MegaFIR_ElectricalDiagram_v001.png?v=4&s=200 "electrical diagram MegaFIR")
-<img src="https://raw.githubusercontent.com/MakeInBelgium/No-Touch-IR-Thermometer/master/Pictures/MegaFIR_ElectricalDiagram_v001.png" width="100" height="100">
+<img src="https://raw.githubusercontent.com/MakeInBelgium/No-Touch-IR-Thermometer/master/Pictures/MegaFIR_ElectricalDiagram_v001.png" width="250">
 
 Note: the design is draw using Circuit Diagram, a free and Open-Source tool. [You can find the design here](https://www.circuit-diagram.org/circuits/e216c06a74a149ee9efb37499b95ee45).
 
