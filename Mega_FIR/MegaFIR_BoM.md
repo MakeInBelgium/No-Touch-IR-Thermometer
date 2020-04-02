@@ -11,4 +11,4 @@
 | 1 | LED - Red | ? | ? | |
 | 2 | Resistor 1kΩ | ROX3SJ1K0 | 1738688 [link(.be)](https://be.farnell.com/neohm-te-connectivity/rox3sj1k0/res-1k-5-3w-axial-metal-oxide/dp/1738688) | |
 | 3 | Resistor 100Ω | ROX3SJ100R | 1738675 [link(.be)](https://be.farnell.com/neohm-te-connectivity/rox3sj100r/res-100r-5-3w-axial-metal-oxide/dp/1738675)  | |
-| 1 | 9V Battery Snap Connector | MCM 29-130 | 2783529 [link(.be)](https://be.farnell.com/mcm/29-130/9v-battery-snap-connector/dp/2783529) | |
+| 1 | 9V Battery Snap Connector | Keystone 2238 | 1650675 [link(.be)](https://be.farnell.com/keystone/2238/battery-strap-pp3/dp/1650675) | |
