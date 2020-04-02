@@ -1,6 +1,6 @@
 # MegaFIR Electrical Diagram
 
-![Electrical Diagram](/Pictures/MegaFIR_ElectricalDiagram_v001.png "electrical diagram MegaFIR")
+![Electrical Diagram](/Pictures/MegaFIR_ElectricalDiagram_v001.png "electrical diagram MegaFIR"){:height="50%" width="50%"}
 
 Note: the design is draw using Circuit Diagram, a free and Open-Source tool. [You can find the design here](https://www.circuit-diagram.org/circuits/e216c06a74a149ee9efb37499b95ee45).
 
