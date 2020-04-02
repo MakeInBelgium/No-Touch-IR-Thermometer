@@ -6,9 +6,9 @@
 | 1 | ATmega328 Microprocessor | ATMEGA328-PU | 1972087 [link(.be)](https://be.farnell.com/microchip/atmega328-pu/mcu-8bit-atmega-20mhz-dip-28/dp/1972087) | |
 | 1 | LDO Voltage Regulator (3V) | LP2950-30LPR | 3122121 [link(.be)](https://be.farnell.com/texas-instruments/lp2950-30lpr/ic-ldo-volt-reg-3v-0-1a-to-92/dp/3122121) | |
 | 1 | Switch | ? | ? | |
-| 1 | LED - Green | ? | ? | |
-| 1 | LED - Yellow | ? | ? | |
-| 1 | LED - Red | ? | ? | |
+| 1 | LED - Green T-1 3/4 (5mm), 20 mA, 2 V | L-57GGD | 2217954 [link(.be](https://be.farnell.com/kingbright/l-57ggd/led-bi-polar-5mm-green/dp/2217954) | |
+| 1 | LED - Yellow T-1 3/4 (5mm), 20 mA, 2 V |	L-57YYD | 2217955 [link(.be)](https://be.farnell.com/kingbright/l-57yyd/led-bi-polar-5mm-yellow/dp/2217955) | |
+| 1 | LED - Red T-1 3/4 (5mm), 20 mA, 2 V | L-57IID | 2217953 [link(.be)](https://be.farnell.com/kingbright/l-57iid/led-bi-polar-5mm-red/dp/2217953) | |
 | 2 | Resistor 1kΩ | ROX3SJ1K0 | 1738688 [link(.be)](https://be.farnell.com/neohm-te-connectivity/rox3sj1k0/res-1k-5-3w-axial-metal-oxide/dp/1738688) | |
 | 3 | Resistor 100Ω | ROX3SJ100R | 1738675 [link(.be)](https://be.farnell.com/neohm-te-connectivity/rox3sj100r/res-100r-5-3w-axial-metal-oxide/dp/1738675)  | |
 | 1 | 9V Battery Snap Connector | Keystone 2238 | 1650675 [link(.be)](https://be.farnell.com/keystone/2238/battery-strap-pp3/dp/1650675) | |
