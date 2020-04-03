@@ -10,7 +10,7 @@ This design is based on the idea of using a pin-through-hole proto-breadboard [(
 ## PIN assignment
 Some PINs on the ATmega are randomly chosen, some are very strict:
 | ATmega PIN | Arduino PIN | Description | Strict? |
-| :--------: | -------- | -------- | :--------: | 
+| --------: | --------: | -------- | :--------: | 
 | 1 / PC6 | RESET | needed for programming the ATmega from the Arduino | X |
 | 4 / PD2 | 2 | input from switch/button |  |
 | VCC | VCC | Power | X |
