@@ -5,7 +5,7 @@
 Note: the design is draw using Circuit Diagram, a free and Open-Source tool. [You can find the design here](https://www.circuit-diagram.org/circuits/e216c06a74a149ee9efb37499b95ee45).
 
 ## Description
-This design is based on the idea of using a pin-through-hole proto-breadboard [(example)](https://www.adafruit.com/product/571) with 2x30 lanes and a +/- rail on each side. The Lay-out is specifically designed to have the least amount of cables overlapping or even crossing the middle section. 
+This design is based on the idea of using a pin-through-hole proto-breadboard [(example)](https://www.adafruit.com/product/571) with 2x30 lanes and a +/- rail on each side. The lay-out is specifically designed to have the least amount of cables overlapping or even crossing the middle section. 
 
 ## PIN assignment
 Some PINs on the ATmega are randomly chosen, some are very strict:
