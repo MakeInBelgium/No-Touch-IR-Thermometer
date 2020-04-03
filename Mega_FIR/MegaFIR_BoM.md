@@ -12,3 +12,16 @@
 | 2 | Resistor 1kΩ | ROX3SJ1K0 | 1738688 [link(.be)](https://be.farnell.com/neohm-te-connectivity/rox3sj1k0/res-1k-5-3w-axial-metal-oxide/dp/1738688) | | €0,299 |
 | 3 | Resistor 100Ω | ROX3SJ100R | 1738675 [link(.be)](https://be.farnell.com/neohm-te-connectivity/rox3sj100r/res-100r-5-3w-axial-metal-oxide/dp/1738675)  | | €0,203 |
 | 1 | 9V Battery Snap Connector | Keystone 2238 | 1650675 [link(.be)](https://be.farnell.com/keystone/2238/battery-strap-pp3/dp/1650675) | | €1,690 |
+
+## Cost
+The total build of materials for a MegaFIR will set you back €6 for the components. Additional costs are:
+* The Melexis sensor
+* a 9V battery
+* a breadboard
+* some wiring
+* a case* 
+
+
+
+
+*:we'll come up with some ideas later, maybe even a 3D printing file
