@@ -25,3 +25,8 @@ Some PINs on the ATmega are randomly chosen, some are very strict:
 | 18 / PB4 | 12 | MISO - needed for programming the ATmega from the Arduino | X |
 | 17 / PB3 | 11 | MOSI - needed for programming the ATmega from the Arduino | X |
 
+## Arduino & ATmega pin alignment
+
+<img src="https://raw.githubusercontent.com/MakeInBelgium/No-Touch-IR-Thermometer/master/Mega_FIR/Pictures/ATmega328-and-the-Arduino-pin-out.png" width="450">
+
+*sorry I can't find and quote the original source of this image. it was the best Google search result
