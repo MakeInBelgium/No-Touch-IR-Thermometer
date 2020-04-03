@@ -107,6 +107,13 @@ static i2c_fsm_states_t I2C_0_do_I2C_SEND_ADR_READ(void);
 static i2c_fsm_states_t I2C_0_do_I2C_SEND_ADR_WRITE(void);
 static void             I2C_0_master_isr(void);
 
+/**
+ * \brief In a polled implementation, call this function in a loop to execute the FSM
+ *
+ * \return Nothing
+ */
+inline void I2C_0_poller(void);
+
 /*if timeoutDriverEnabled>
 ABSOLUTETIME_t ${i2cMasterFunctions["timeoutHandler"]}(void *p);
 
@@ -207,10 +214,10 @@ void I2C_0_init()
 
 	TWI0.MCTRLA = 1 << TWI_ENABLE_bp        /* Enable TWI Master: enabled */
 	              | 0 << TWI_QCEN_bp        /* Quick Command Enable: disabled */
-	              | 1 << TWI_RIEN_bp        /* Read Interrupt Enable: enabled */
+	              | 0 << TWI_RIEN_bp        /* Read Interrupt Enable: disabled */
 	              | 0 << TWI_SMEN_bp        /* Smart Mode Enable: disabled */
 	              | TWI_TIMEOUT_DISABLED_gc /* Bus Timeout Disabled */
-	              | 1 << TWI_WIEN_bp;       /* Write Interrupt Enable: enabled */
+	              | 0 << TWI_WIEN_bp;       /* Write Interrupt Enable: disabled */
 }
 
 /**
@@ -256,9 +263,6 @@ i2c_error_t I2C_0_open(i2c_address_t address)
 		TWI0.MSTATUS |= TWI_BUSSTATE_IDLE_gc;
 		// Reset module
 		TWI0.MSTATUS |= (TWI_RIF_bm | TWI_WIF_bm);
-
-		// uncomment the IRQ enable for an interrupt driven driver.
-		TWI0.MCTRLA |= (TWI_RIEN_bm | TWI_WIEN_bm);
 
 		ret = I2C_NOERR;
 	}
@@ -363,6 +367,8 @@ i2c_error_t I2C_0_master_operation(bool read)
 			I2C_0_status.state = I2C_SEND_ADR_WRITE;
 		}
 		I2C_0_master_isr();
+
+		I2C_0_poller();
 	}
 	return ret;
 }
@@ -386,6 +392,17 @@ i2c_error_t I2C_0_master_write(void)
 /************************************************************************/
 /* Helper Functions                                                     */
 /************************************************************************/
+
+inline void I2C_0_poller(void)
+{
+	while (I2C_0_status.busy) {
+		_delay_ms(10);
+		while (!(TWI0.MSTATUS & TWI_RIF_bm) && !(TWI0.MSTATUS & TWI_WIF_bm)) {
+		};
+		_delay_ms(10);
+		I2C_0_master_isr();
+	}
+}
 
 static i2c_fsm_states_t I2C_0_do_I2C_RESET(void)
 {
@@ -607,11 +624,6 @@ stateHandlerFunction *I2C_0_fsmStateTable[] = {
     I2C_0_do_I2C_BUS_COLLISION,      // I2C_BUS_COLLISION
     I2C_0_do_I2C_BUS_ERROR           // I2C_BUS_ERROR
 };
-
-ISR(TWI0_TWIM_vect)
-{
-	I2C_0_master_isr();
-}
 
 void I2C_0_master_isr(void)
 {

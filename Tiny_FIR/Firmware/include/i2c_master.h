@@ -70,6 +70,8 @@ void I2C_0_set_data_nack_callback(i2c_callback cb, void *p);
 
 void I2C_0_set_timeout_callback(i2c_callback cb, void *p);
 
+void I2C_0_poller(void);
+
 #ifdef __cplusplus
 }
 #endif
